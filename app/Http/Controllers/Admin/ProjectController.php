@@ -44,6 +44,7 @@ class ProjectController extends Controller
             'description' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg, jpg, png',
             'github' => 'nullable|url',
+            'type_id' => 'nullable|exists:type,id'
 
 
         ], [
@@ -57,6 +58,7 @@ class ProjectController extends Controller
             'image.image' => 'L\' immagine deve essere un file immagine',
             'image.mimes' => 'L\' immagine deve avere come estensioni jpeg, jpg, png',
             'github.url' => 'Il link github deve essere corretto',
+            'type_id' => 'Tupo non valido'
 
         ]);
         $data = $request->all();

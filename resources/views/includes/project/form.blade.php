@@ -37,7 +37,7 @@
                     <img id="preview" class="img-fluid" src="{{$project->image ? asset('storage/'. $project->image) : 'https://marcolanci.it/utils/placeholder.jpg'}}" alt="">
             </div>
             {{-- Type --}}
-            <div class="col-6">
+            <div class="col-12">
                 <div class="mb-3">
                     <label for="type_id" class="form-label">Type:</label>
                     <select class="form-select" name="type_id" id="type_id">
@@ -58,7 +58,6 @@
         <div class="d-flex justify-content-end p-5">
             <button type="submit" class="btn px-5 border-white btn-primary">Salva</button>
         </div>
-
         <a href="{{ route('admin.home') }}" class="btn mx-1 small btn-secondary">Indietro</a>
     </form>
 </div>
