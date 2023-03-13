@@ -33,10 +33,19 @@
                         placeholder="Inserisci url image" value="{{old('image',$project->image)}}" name="image">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-1">
                     <img id="preview" class="img-fluid" src="{{$project->image ? asset('storage/'. $project->image) : 'https://marcolanci.it/utils/placeholder.jpg'}}" alt="">
             </div>
-
+            {{-- Type --}}
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="type_id" class="form-label">Type:</label>
+                    <select class="form-select" name="type_id" id="type_id">
+                        <option value="">-</option>
+                        @foreach ($types as $type)
+                        <option @if($project->type_id == $type->id) selected @endif value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+                    </select>
             {{-- Description --}}
             <div class="col-12">
                 <div class="mb-3">
